@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    --pokemon-main-color: #CC0000;
+    --card-shadow: 0 1px 1px 0 rgba(60,64,67,.08), 0 1px 3px 1px rgba(60,64,67,.16)
+  }

@@ -3,5 +3,7 @@ export interface Pokemon {
     name:string;
     weight:string;
     height:string;
-    image:string;
+    img:string;
+    type : Array<string>;
+    weaknesses : Array<string>;
 }
