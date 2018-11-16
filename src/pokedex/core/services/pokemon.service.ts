@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Pokemon } from '../../shared/models/pokemon.interfaces';
+import { Pokemon, Pokedex } from '../../shared/models/pokemon.interfaces';
 import { ApiService } from './api/api.service';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { Headers, Http, Response } from "@angular/http";
 
 @Injectable({
@@ -15,13 +15,15 @@ export class PokemonService {
     return Observable.throw(console.error("Some error occured", error));
   }
 
-  getPokemons() {
+  getPokemons() : Observable<Pokemon[]> {
     var url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
-    return this.apiService.get(url).pipe(
-      map(response => {
-        return <Pokemon[]>response;
-      }, catchError(this.handleError))
-    );
+    return this.apiService.get<Pokedex>(url).pipe(
+      map(response => 
+        response.pokemon
+      , catchError(this.handleError))
+    )
   }
+
+
   
 }

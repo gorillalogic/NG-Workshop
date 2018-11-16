@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { PokemonDetailComponent } from './features/components/pokemon-detail/pokemon-detail.component';
+import { PokemonItemComponent } from './features/components/pokemon-item/pokemon-item.component';
 import { PokemonListComponent } from './features/components/pokemon-list/pokemon-list.component';
 import {HttpClientModule } from '@angular/common/http';
 import { HttpModule }    from '@angular/http';
@@ -13,7 +13,7 @@ import { HttpModule }    from '@angular/http';
   declarations: [
     AppComponent,
     NavbarComponent,
-    PokemonDetailComponent,
+    PokemonItemComponent,
     PokemonListComponent
   ],
   imports: [

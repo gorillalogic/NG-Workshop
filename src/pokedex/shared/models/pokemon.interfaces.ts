@@ -7,3 +7,7 @@ export interface Pokemon {
     type : Array<string>;
     weaknesses : Array<string>;
 }
+
+export interface Pokedex {
+    pokemon: Pokemon[];
+}
