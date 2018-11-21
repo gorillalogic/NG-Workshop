@@ -4,6 +4,7 @@ import { Pokemon, Pokedex } from '../../shared/models/pokemon.interfaces';
 import { ApiService } from './api/api.service';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { Headers, Http, Response } from "@angular/http";
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,7 @@ export class PokemonService {
   }
 
   getPokemons() : Observable<Pokemon[]> {
-    var url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
-    return this.apiService.get<Pokedex>(url).pipe(
+    return this.apiService.get<Pokedex>(environment.endpointPokemons).pipe(
       map(response => 
         response.pokemon
       , catchError(this.handleError))
