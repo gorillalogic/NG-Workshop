@@ -13,7 +13,5 @@ export class PokemonItemComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }
