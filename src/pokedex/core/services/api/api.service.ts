@@ -78,9 +78,9 @@ export class ApiService {
    * Returns serialized parameters from key/value pairs
    */
   private getHttpParams(params) {
-    let httpParams = new HttpParams();
+    const httpParams = new HttpParams();
     Object.keys(params).forEach(key => {
-      httpParams = httpParams.append(key, params[key]);
+      httpParams.append(key, params[key]);
     });
     return httpParams;
   }
@@ -88,12 +88,13 @@ export class ApiService {
   /**
    * Returns header parameters from key/value pairs
    */
-  private getHttpHeaders(headers, headerParams) {
-    Object.keys(headerParams).forEach(key => {
-      headers = headers.append(key, headerParams[key]);
+  private getHttpHeaders(params): HttpHeaders {
+    const httpHeaders = new HttpHeaders();
+    Object.keys(params).forEach(key => {
+      httpHeaders.append(key, params[key]);
     });
 
-    return headers;
+    return httpHeaders;
   }
 }
 
