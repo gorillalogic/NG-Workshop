@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { Pokemon, Pokedex } from '../../shared/models/pokemon.interfaces';
+import { Pokemon, Pokedex } from '@pokedex/core/models/pokemon.interfaces';
 import { ApiService } from './api/api.service';
 import { catchError, map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
