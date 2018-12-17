@@ -9,5 +9,5 @@ export interface Pokemon {
 }
 
 export interface Pokedex {
-  pokemon: Pokemon[];
+  pokemon: Array<Pokemon>;
 }

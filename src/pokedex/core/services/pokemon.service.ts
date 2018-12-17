@@ -14,7 +14,7 @@ export class PokemonService {
     return throwError(console.error('Some error occured', error));
   }
 
-  getPokemons(): Observable<Pokemon[]> {
+  getPokemons(): Observable<Array<Pokemon>> {
     return this.apiService
       .get<Pokedex>(environment.endpointPokemons)
       .pipe(map(response => response.pokemon, catchError(this.handleError)));
