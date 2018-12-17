@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--pokemon-main-color);
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 10px 12px;
+  }
+
+  li {
+    justify-content: flex-start;
+    align-items: baseline;
+    display: block;
+    padding: 0 12px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.3em;
+    }
+  }
+}
