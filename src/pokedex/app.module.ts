@@ -7,7 +7,9 @@ import { AppComponent } from '@pokedex/app.component';
 import { CoreModule } from '@pokedex/core/core.module';
 import { SharedModule } from '@pokedex/shared/shared.module';
 import { LayoutModule } from '@pokedex/layout/layout.module';
-import { PokemonModule } from '@pokedex/features/pokemon/pokemon.module';
+import { PokemonModule } from '@pokedex/features/components/pokemon.module';
+import { HttpModule } from '@angular/http';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
