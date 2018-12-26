@@ -9,10 +9,9 @@ import { SharedModule } from '@pokedex/shared/shared.module';
 import { LayoutModule } from '@pokedex/layout/layout.module';
 import { PokemonModule } from '@pokedex/features/components/pokemon.module';
 import { HttpModule } from '@angular/http';
-import { PokemonDetailsComponent } from './features/components/pokemon-details/pokemon-details.component';
 
 @NgModule({
-  declarations: [AppComponent, PokemonDetailsComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,13 +1,19 @@
-<div *ngIf="pokemonDetail" class="pokemon-detail-container">
-  <h1>{{ pokemonDetail?.name }} #{{ pokemonDetail?.id }}</h1>
-  <div><img src="{{ pokemonDetail?.img }}" /></div>
-  <div *ngFor="let type of pokemonDetail?.type" class="type" [ngClass]="type | lowercase">{{ type }}</div>
-  <p><strong>Height:</strong> {{ pokemonDetail?.height }} <strong>Weight:</strong> {{ pokemonDetail?.weight }}</p>
+<ng-container *ngIf="pokemonDetail; then pokemonFound; else pokemonNoFound"> </ng-container>
 
-  <h2>Weaknesses</h2>
-  <ul *ngFor="let weakness of pokemonDetail?.weaknesses" class="type" [ngClass]="weakness | lowercase">
-    <i> {{ weakness }}</i>
-  </ul>
-</div>
+<ng-template #pokemonFound>
+  <div class="pokemon-detail-container">
+    <h1>{{ pokemonDetail.name }} #{{ pokemonDetail.id }}</h1>
+    <div><img src="{{ pokemonDetail.img }}" /></div>
+    <div *ngFor="let type of pokemonDetail.type" class="type" [ngClass]="type | lowercase">{{ type }}</div>
+    <p><strong>Height:</strong> {{ pokemonDetail.height }} <strong>Weight:</strong> {{ pokemonDetail.weight }}</p>
 
-<div *ngIf="!pokemonDetail"><h1>No pokemon found</h1></div>
+    <h2>Weaknesses</h2>
+    <ul *ngFor="let weakness of pokemonDetail.weaknesses" class="type" [ngClass]="weakness | lowercase">
+      <i> {{ weakness }}</i>
+    </ul>
+  </div>
+</ng-template>
+
+<ng-template #pokemonNoFound>
+  <div><h1>No pokemon found</h1></div>
+</ng-template>
