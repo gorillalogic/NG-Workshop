@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  endpointPokemons: 'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json'
 };
 
 /*
