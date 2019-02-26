@@ -4,6 +4,9 @@ import { PokemonService } from '../../../core/services/pokemon.service';
 import { switchMap, filter } from 'rxjs/operators';
 import { Pokemon } from '@pokedex/core/models/pokemon.interfaces';
 import { Observable, Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { IPokemonState } from '@pokedex/features/components/store/pokemon.state';
+import { getPokemonByIdSelector } from '@pokedex/features/components/store/selectors/pokemon.selectors';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -13,7 +16,11 @@ import { Observable, Subscription } from 'rxjs';
 export class PokemonDetailsComponent implements OnInit, OnDestroy {
   pokemonDetail: Pokemon;
   private subscription: Subscription;
-  constructor(private route: ActivatedRoute, private pokemonService: PokemonService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private pokemonService: PokemonService,
+    private store: Store<IPokemonState>
+  ) {}
 
   ngOnInit() {
     this.subscription = new Subscription();
@@ -22,9 +29,7 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
         .pipe(
           switchMap(params => {
             const pokemonId = Number(params.get('id'));
-            return this.pokemonService
-              .getPokemons()
-              .pipe(switchMap(pokemons => pokemons.filter(pokemon => pokemon.id === pokemonId)));
+            return this.store.select(getPokemonByIdSelector(pokemonId));
           })
         )
         .subscribe(pokemon => (this.pokemonDetail = pokemon))
