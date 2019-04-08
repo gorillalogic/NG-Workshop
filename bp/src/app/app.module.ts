@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
 import { ProfileModule } from '../examples/02-03-04-lazy-loading/profile/profile.module';
 import { APIModule } from '../examples/02-03-04-lazy-loading/api.module';
+import { ContactsModule } from '../examples/06-07-change-detection/contacts.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,9 @@ import { APIModule } from '../examples/02-03-04-lazy-loading/api.module';
     // Example 3
     ProfileModule,
     // APIModule.forRoot()
+
+    // Example 5, 6
+    ContactsModule
 
   ],
   providers: [],

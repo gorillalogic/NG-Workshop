@@ -1,0 +1,51 @@
+<p>
+  Contacts List
+</p>
+
+<div>
+  <input [(ngModel)]="txtinput" type="text" (keydown)="addNewContact($event, txtinput);">
+</div>
+
+<ul>
+  <li *ngFor="let contact of list">Name: {{ contact.name }} Factorial: {{ calcFac(contact.randomNumber) }}</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <button (click)="print()">print</button> -->
+
+<!-- <li *ngFor="let contact of list">Name: {{ contact.name }} Factorial: {{ contact.randomNumber | factorial }}</li> -->
