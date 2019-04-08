@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Optional } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'bp-lazy-loading',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LazyLoadingComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Optional() public dataService: DataService) { }
 
   ngOnInit() {
   }

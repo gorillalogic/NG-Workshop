@@ -1,4 +1,11 @@
 <p>
   I'm no lazy at all!
   💪💪💪💪💪💪💪💪💪💪
+
+  <br>
+
+  <ng-container *ngIf="dataService?.username as user">
+    <strong>Username:</strong> {{ user }}
+  </ng-container>
+
 </p>

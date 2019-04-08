@@ -3,26 +3,40 @@
 </h1>
 
 
-<section>
-  <article>
-    <h2>Example #1</h2>
-    <h3>Encapsulation</h3>
+<main>
 
-    <p>This is a paragraph tag part of the app component</p>
+  <mat-grid-list cols="3" rowHeight="2:1" [gutterSize]="'15px'">
+    <mat-grid-tile>
+      <mat-card class="card">
+        <mat-card-content>
+          <mat-card-title>Example #1</mat-card-title>
+          <mat-card-subtitle>Encapsulation</mat-card-subtitle>
+          <p>This is a paragraph tag part of the app component</p>
 
-    <bp-encapsulation></bp-encapsulation>
-  </article>
+          <bp-encapsulation></bp-encapsulation>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
 
+    <mat-grid-tile>
+      <mat-card class="card">
+        <mat-card-content>
+          <mat-card-title>Example #2, #3, #4</mat-card-title>
+          <mat-card-subtitle>Lazy Loading, Preloading Strategy n Service</mat-card-subtitle>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button [routerLink]="'/no-lazy-loading'">No Lazy page</button>
+          <button mat-button [routerLink]="'/lazy-loading'">Lazy page</button>
+          <button mat-button [routerLink]="'/profile'">Profile</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
 
-  <article>
-    <h2>Example #2</h2>
-    <h3>Lazy Loading</h3>
+  </mat-grid-list>
 
-    <a [routerLink]="'/no-lazy-loading'">No Lazy page</a>
-    <a [routerLink]="'/lazy-loading'">Lazy page</a>
+  <mat-divider></mat-divider>
 
-  </article>
+  <router-outlet></router-outlet>
 
-</section>
+</main>
 
-<router-outlet></router-outlet>

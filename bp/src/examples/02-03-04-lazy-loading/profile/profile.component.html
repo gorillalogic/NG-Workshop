@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>User</mat-card-title>
+  <mat-card-content>
+      <p>
+        <mat-form-field>
+          <input type="text" matInput #username placeholder="Username">
+        </mat-form-field>
+      </p>
+
+      <div style="color:red;" *ngIf="dataService?.username">
+        <small>User active: {{ dataService.username }} </small>
+      </div>
+
+      <div class="button">
+        <button type="submit" mat-button (click)="save(username.value); username.value=''" mat-raised-button color="primary">Save User</button>
+      </div>
+
+  </mat-card-content>
+</mat-card>
