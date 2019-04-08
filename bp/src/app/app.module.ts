@@ -10,6 +10,7 @@ import { MaterialModule } from '../material.module';
 import { ProfileModule } from '../examples/02-03-04-lazy-loading/profile/profile.module';
 import { APIModule } from '../examples/02-03-04-lazy-loading/api.module';
 import { ContactsModule } from '../examples/06-07-change-detection/contacts.module';
+import { NgContentNgTemplateModule } from '../examples/05-ng-content-ng-template/05-ng-content-ng-template.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,10 @@ import { ContactsModule } from '../examples/06-07-change-detection/contacts.modu
     ProfileModule,
     // APIModule.forRoot()
 
-    // Example 5, 6
+    // Example 5
+    NgContentNgTemplateModule,
+
+    // Example 6, 7
     ContactsModule
 
   ],
