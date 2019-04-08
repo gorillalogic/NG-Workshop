@@ -2,11 +2,27 @@
   Welcome to The Best Practices Workshop
 </h1>
 
-<h2>Example #1</h2>
-<h3>Encapsulation</h3>
 
-<p>This is a paragraph tag part of the app component</p>
+<section>
+  <article>
+    <h2>Example #1</h2>
+    <h3>Encapsulation</h3>
 
-<bp-encapsulation></bp-encapsulation>
+    <p>This is a paragraph tag part of the app component</p>
+
+    <bp-encapsulation></bp-encapsulation>
+  </article>
+
+
+  <article>
+    <h2>Example #2</h2>
+    <h3>Lazy Loading</h3>
+
+    <a [routerLink]="'/no-lazy-loading'">No Lazy page</a>
+    <a [routerLink]="'/lazy-loading'">Lazy page</a>
+
+  </article>
+
+</section>
 
 <router-outlet></router-outlet>
