@@ -9,12 +9,13 @@ const routes: Routes = [
   },
   {
     path: 'in-memory-api',
-    loadChildren: './features/in-memory-api/in-memory-api.module#InMemoryAPIModule',
-  }
+    loadChildren:
+      './features/in-memory-api/in-memory-api.module#InMemoryAPIModule',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

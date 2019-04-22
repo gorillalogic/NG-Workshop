@@ -7,21 +7,21 @@ import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-user-details',
-  templateUrl: './user-details.component.html'
+  templateUrl: './user-details.component.html',
 })
 export class UserDetailsComponent implements OnInit {
-
   user$: Observable<User>;
 
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService
-  ) { }
+    private userService: UserService,
+  ) {}
 
   ngOnInit() {
     this.user$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.userService.getUser(params.get('id')))
+        this.userService.getUser(params.get('id')),
+      ),
     );
   }
 }

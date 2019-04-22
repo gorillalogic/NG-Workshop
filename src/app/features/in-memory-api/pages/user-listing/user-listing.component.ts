@@ -8,7 +8,7 @@ import { UserService } from 'src/app/core/services/user.service';
 @Component({
   selector: 'app-user-listing',
   templateUrl: './user-listing.component.html',
-  styleUrls: ['./user-listing.component.scss']
+  styleUrls: ['./user-listing.component.scss'],
 })
 export class UserListingComponent implements OnInit, OnDestroy {
   users$: Observable<Array<User>>;
@@ -41,17 +41,14 @@ export class UserListingComponent implements OnInit, OnDestroy {
   listenForFieldChange() {
     this.subscription.add(
       this.search.valueChanges
-        .pipe(
-          debounceTime(1000),
-        )
-        .subscribe(val => this.handleFieldChange(val))
+        .pipe(debounceTime(1000))
+        .subscribe(val => this.handleFieldChange(val)),
     );
   }
 
   deleteUser(id) {
     this.subscription.add(
-      this.userService.deleteUser(id).subscribe(() => this.getUsers())
+      this.userService.deleteUser(id).subscribe(() => this.getUsers()),
     );
   }
-
 }

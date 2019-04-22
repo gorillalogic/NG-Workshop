@@ -15,13 +15,7 @@ import { UserDetailsComponent } from './pages/user-details/user-details.componen
     UserDetailComponent,
     UserDetailsComponent,
   ],
-  imports: [
-    CommonModule,
-    InMemoryAPIRoutingModule,
-    ReactiveFormsModule,
-  ],
-  providers: [
-    UserService,
-  ]
+  imports: [CommonModule, InMemoryAPIRoutingModule, ReactiveFormsModule],
+  providers: [UserService],
 })
-export class InMemoryAPIModule { }
+export class InMemoryAPIModule {}

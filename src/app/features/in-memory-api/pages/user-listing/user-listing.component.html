@@ -2,9 +2,14 @@
 <div class="user-search">
   <input type="text" placeholder="Search Users" [formControl]="search" />
   <ul *ngIf="searchResults$" class="results">
-    <li *ngFor="let user of (searchResults$ | async)">
-      <a [routerLink]="['user', user.id]">{{user.name}} {{user.lastName}}</a>
+    <li *ngFor="let user of searchResults$ | async">
+      <a [routerLink]="['user', user.id]"
+        >{{ user.name }} {{ user.lastName }}</a
+      >
     </li>
   </ul>
 </div>
-<app-user-list [users]="users$ | async" (deleteUser)="deleteUser($event)"></app-user-list>
+<app-user-list
+  [users]="users$ | async"
+  (deleteUser)="deleteUser($event)"
+></app-user-list>

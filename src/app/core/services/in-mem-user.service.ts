@@ -31,7 +31,7 @@ export class InMemUserService implements InMemoryDbService {
         lastName: 'Falcon',
         email: 'gerardo.falcon@gorillalogic.com',
         role: 'Senior Software Engineer',
-      }
+      },
     ];
     return { users };
   }

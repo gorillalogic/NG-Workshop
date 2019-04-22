@@ -1,10 +1,13 @@
 <div *ngIf="user">
   <a routerLink="/in-memory-api">← Back</a>
-  <h3>Details of {{user.name}}</h3>
+  <h3>Details of {{ user.name }}</h3>
   <p>
-    <strong>Name:</strong> {{user.name}} <br />
-    <strong>Lastname:</strong> {{user.lastName}} <br />
-    <strong>Email:</strong>&nbsp;<a href="mailto:{{user.email}}">{{user.email}}</a> <br />
-    <strong>Role:</strong> {{user.role}}
+    <strong>Name:</strong> {{ user.name }} <br />
+    <strong>Lastname:</strong> {{ user.lastName }} <br />
+    <strong>Email:</strong>&nbsp;<a href="mailto:{{ user.email }}">{{
+      user.email
+    }}</a>
+    <br />
+    <strong>Role:</strong> {{ user.role }}
   </p>
 </div>

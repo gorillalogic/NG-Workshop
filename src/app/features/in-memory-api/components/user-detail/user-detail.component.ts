@@ -3,15 +3,13 @@ import { User } from 'src/app/core/model/user';
 
 @Component({
   selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html'
+  templateUrl: './user-detail.component.html',
 })
 export class UserDetailComponent implements OnInit {
   @Input()
   user: User;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

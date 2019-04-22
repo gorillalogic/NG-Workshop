@@ -9,17 +9,18 @@ import { HomeComponent } from './features/home/home.component';
 import { InMemUserService } from './core/services/in-mem-user.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-  ],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    !environment.production ? HttpClientInMemoryWebApiModule.forRoot(InMemUserService/*, { delay: 500 }*/) : [],
+    !environment.production
+      ? HttpClientInMemoryWebApiModule.forRoot(
+          InMemUserService /*, { delay: 500 }*/,
+        )
+      : [],
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
