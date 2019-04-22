@@ -1,0 +1,22 @@
+.user-search {
+  position: relative;
+  .results {
+    background-color: #fff;
+    border: 1px solid #cacaca;
+    position: absolute;
+    top: 100%;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    li {
+      a {
+        color: #000;
+        display: block;
+        padding: .3rem;
+        &:hover {
+          background-color: #e6e6e6;
+        }
+      }
+    }
+  }
+}
