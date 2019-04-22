@@ -7,4 +7,4 @@
     </li>
   </ul>
 </div>
-<app-user-list [users]="users$ | async"></app-user-list>
+<app-user-list [users]="users$ | async" (deleteUser)="deleteUser($event)"></app-user-list>

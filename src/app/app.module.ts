@@ -17,7 +17,7 @@ import { InMemUserService } from './core/services/in-mem-user.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    !environment.production ? HttpClientInMemoryWebApiModule.forRoot(InMemUserService, { delay: 500 }) : [],
+    !environment.production ? HttpClientInMemoryWebApiModule.forRoot(InMemUserService/*, { delay: 500 }*/) : [],
   ],
   providers: [],
   bootstrap: [AppComponent]

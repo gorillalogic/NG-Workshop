@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, exhaustMap } from 'rxjs/operators';
 import { User } from '../model/user';
 
 @Injectable({
@@ -10,6 +10,14 @@ import { User } from '../model/user';
 export class UserService {
 
   constructor(private http: HttpClient) { }
+
+  deleteUser(id: string) {
+    return this.http
+      .delete(`api/users/${id}`)
+      .pipe(
+        exhaustMap(() => of(null))
+      );
+  }
 
   getUser(id: string): Observable<User> {
     return this.http

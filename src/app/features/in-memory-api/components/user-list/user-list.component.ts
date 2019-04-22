@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { User } from 'src/app/core/model/user';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -10,6 +9,8 @@ import { Router } from '@angular/router';
 export class UserListComponent {
   @Input()
   users: Array<User>;
+  @Output()
+  deleteUser = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor() {}
 }

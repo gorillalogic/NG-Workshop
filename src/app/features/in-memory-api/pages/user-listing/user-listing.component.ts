@@ -48,4 +48,10 @@ export class UserListingComponent implements OnInit, OnDestroy {
     );
   }
 
+  deleteUser(id) {
+    this.subscription.add(
+      this.userService.deleteUser(id).subscribe(() => this.getUsers())
+    );
+  }
+
 }
